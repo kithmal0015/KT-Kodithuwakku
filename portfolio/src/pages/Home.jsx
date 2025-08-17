@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, Star, Zap, Cpu } from 'lucide-react';
 import myPhoto from '../assets/my image.png'; 
 
@@ -6,6 +7,39 @@ const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    // Contact form state
+    const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+    const [formStatus, setFormStatus] = useState('');
+
+    const handleContactChange = (e) => {
+      const { name, value } = e.target;
+      setContactForm((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleContactSubmit = (e) => {
+      e.preventDefault();
+      setFormStatus('Sending...');
+        emailjs.send(
+          'service_59sisvb',
+          'template_jtnfvln',
+          {
+            from_name: contactForm.name,
+            from_email: contactForm.email,
+            message: contactForm.message,
+          },
+          'prWynF6MLefTLNOL8'
+        )
+      .then(
+        () => {
+          setFormStatus('Message sent!');
+          setContactForm({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          setFormStatus('Failed to send. Please try again.');
+        }
+      );
+    };
 
   
 
@@ -18,6 +52,7 @@ const Portfolio = () => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);*/
+
 
   // Smooth scrolling to sections
   const scrollToSection = (sectionId) => {
@@ -87,6 +122,7 @@ const Portfolio = () => {
     );
   };
 
+
   // Animated gradient orbs
   const GradientOrbs = () => (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -111,6 +147,7 @@ const Portfolio = () => {
       `}</style>
     </div>
   );
+
 
   // Matrix rain effect
   const MatrixRain = () => {
@@ -266,6 +303,7 @@ const Portfolio = () => {
   )}
       </nav>
 
+
       {/* Home Section */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative">
         <FloatingParticles />
@@ -342,6 +380,9 @@ const Portfolio = () => {
         `}</style>
       </section>
 
+
+
+
       {/* About Section */}
       <section id="about" className="py-20 bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-gray-800/50 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
@@ -409,6 +450,9 @@ const Portfolio = () => {
         </div>
       </section>
 
+
+
+
       {/* Skills Section */}
       <section id="skills" className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/50 to-transparent"></div>
@@ -455,6 +499,9 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+
+
 
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-gray-800/50 relative">
@@ -527,6 +574,9 @@ const Portfolio = () => {
         </div>
       </section>
 
+
+
+
       {/* Certification Section */}
 <section id="certification" className="py-20 bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-gray-800/50 relative">
   <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
@@ -554,9 +604,27 @@ const Portfolio = () => {
       <p className="text-gray-300 mb-2">Udacity | 2023</p>
       <a href="#" className="text-pink-400 hover:underline">View Credential</a>
     </div>
+    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-blue-400 transition-all duration-300">
+      <h3 className="text-xl font-bold text-blue-400 mb-2">React Developer Certificate</h3>
+      <p className="text-gray-300 mb-2">Coursera | 2024</p>
+      <a href="#" className="text-blue-400 hover:underline">View Credential</a>
+    </div>
+    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-purple-400 transition-all duration-300">
+      <h3 className="text-xl font-bold text-purple-400 mb-2">Python for Everybody</h3>
+      <p className="text-gray-300 mb-2">edX | 2023</p>
+      <a href="#" className="text-purple-400 hover:underline">View Credential</a>
+    </div>
+    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-pink-400 transition-all duration-300">
+      <h3 className="text-xl font-bold text-pink-400 mb-2">Full Stack Developer</h3>
+      <p className="text-gray-300 mb-2">Udacity | 2023</p>
+      <a href="#" className="text-pink-400 hover:underline">View Credential</a>
+    </div>
   </div>
   </div>
 </section>
+
+
+
 
 
       {/* Contact Section */}
@@ -603,10 +671,9 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-lg border border-gray-700/50 hover:border-gray-600 transition-all duration-300 relative overflow-hidden group">
+              <form onSubmit={handleContactSubmit} className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-lg border border-gray-700/50 hover:border-gray-600 transition-all duration-300 relative overflow-hidden group">
                 {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-pink-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
                 <div className="relative z-10 space-y-6">
                   <div>
                     <label className="block text-sm font-medium mb-2 text-gray-300">
@@ -614,49 +681,64 @@ const Portfolio = () => {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={contactForm.name}
+                      onChange={handleContactChange}
                       className="w-full px-4 py-3 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-lg focus:outline-none focus:border-blue-400 focus:bg-gray-700/70 transition-all duration-300 hover:border-gray-500"
                       placeholder="Your Name"
+                      required
                     />
                   </div>
-                  
                   <div>
                     <label className="block text-sm font-medium mb-2 text-gray-300">
                       Email
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={contactForm.email}
+                      onChange={handleContactChange}
                       className="w-full px-4 py-3 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-lg focus:outline-none focus:border-blue-400 focus:bg-gray-700/70 transition-all duration-300 hover:border-gray-500"
                       placeholder="youremail@gmail.com"
+                      required
                     />
                   </div>
-                  
                   <div>
                     <label className="block text-sm font-medium mb-2 text-gray-300">
                       Message
                     </label>
                     <textarea
                       rows={4}
+                      name="message"
+                      value={contactForm.message}
+                      onChange={handleContactChange}
                       className="w-full px-4 py-3 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-lg focus:outline-none focus:border-blue-400 focus:bg-gray-700/70 transition-all duration-300 hover:border-gray-500 resize-none"
                       placeholder="Your message..."
+                      required
                     ></textarea>
                   </div>
-                  
                   <button
+                    type="submit"
                     className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl relative overflow-hidden group/btn"
                   >
                     <span className="relative z-10">Send Message</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                   </button>
+                  {formStatus && (
+                    <p className="text-green-400 mt-4 text-center">{formStatus}</p>
+                  )}
                 </div>
-
                 {/* Decorative elements */}
                 <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-purple-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
+
+
+
 
       {/* Footer */}
       <footer className="bg-gray-800/50 backdrop-blur-sm py-12 border-t border-gray-700/50 relative">
