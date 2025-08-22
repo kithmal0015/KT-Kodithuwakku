@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, Star, Zap, Cpu } from 'lucide-react';
 import myPhoto from '../assets/my image.png'; 
+import ktkImage from '../assets/KTK.png';
 
 //logo import
 import reactLogo from '../assets/react-logo.png'; // Updated to use ES module import
@@ -287,7 +288,7 @@ const Portfolio = () => {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex justify-between items-center py-4">
       <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
-        K.T.K Portfolio
+        K T K Digital Hub
       </div>
             
              {/* Desktop Navigation */}
@@ -343,9 +344,27 @@ const Portfolio = () => {
             {/* Animated Avatar */}
             <div className="mb-8 relative">
               <div className="w-32 h-32 mx-auto relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full animate-spin-slow opacity-75"></div>
-                <div className="absolute inset-2 bg-gray-900 rounded-full flex items-center justify-center">
-                  <span className="text-4xl">👨‍💻</span>
+                {/* SVG Stroke Animation */}
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 128 128">
+                  <circle
+                    cx="64" cy="64" r="60"
+                    fill="none"
+                    stroke="url(#avatarGradient)"
+                    strokeWidth="4"
+                    strokeDasharray="377"
+                    strokeDashoffset="377"
+                    className="avatar-stroke-animate"
+                  />
+                  <defs>
+                    <linearGradient id="avatarGradient" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#60a5fa" />
+                      <stop offset="0.5" stopColor="#a78bfa" />
+                      <stop offset="1" stopColor="#ec4899" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div className="absolute inset-2 bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
+                  <img src={ktkImage} alt="KTK" className="w-27 h-27 object-cover rounded-full" />
                 </div>
               </div>
             </div>
@@ -408,6 +427,12 @@ const Portfolio = () => {
           .animate-spin-slow {
             animation: spin-slow 8s linear infinite;
           }
+          @keyframes avatarStroke {
+            to { stroke-dashoffset: 0; }
+          }
+          .avatar-stroke-animate {
+            animation: avatarStroke 2s cubic-bezier(0.4,0,0.2,1) forwards;
+          }
         `}</style>
       </section>
 
@@ -467,13 +492,16 @@ const Portfolio = () => {
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 group">
                   <h3 className="font-semibold text-blue-400 mb-2 group-hover:text-blue-300">Education</h3>
-                  <p className="text-gray-300">Bachelor's in IT</p>
-                  <p className="text-sm text-gray-400">Expected 2025</p>
+                  <p className="text-gray-300"> Bachelor of Information Technology - KDU </p>
+
+                  <p className="text-sm text-gray-400">2023 to 2026 (Expected) </p>
                 </div>
                 <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-purple-400/50 transition-all duration-300 group">
                   <h3 className="font-semibold text-purple-400 mb-2 group-hover:text-purple-300">Focus Areas</h3>
-                  <p className="text-gray-300">Full Stack Development</p>
-                  <p className="text-sm text-gray-400">Web</p>
+                  <p className="text-gray-300">Web Development</p>
+                  <p className="text-sm text-gray-400">Frontend Development</p>
+                  <p className="text-sm text-gray-400">QA Engineering</p>
+                  <p className="text-sm text-gray-400">Business Analysis</p>
                 </div>
               </div>
             </div>
@@ -677,9 +705,8 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   Let's Connect
                 </h3>
-                <p className="text-gray-300 mb-8 leading-relaxed">
-                  I'm always interested in new opportunities and collaborations. 
-                  Feel free to reach out if you'd like to work together or just say hello!
+                <p className="text-gray-300 mb-8 leading-relaxed justify-center">
+                  I am open to new projects and working partnerships. All you have to do is enter your name, email & your message and click the send message button to get your work done as you wish.
                 </p>
                 
                 <div className="space-y-6">
@@ -809,7 +836,7 @@ const Portfolio = () => {
             </div>
             
             {/* Quick Links */}
-          <div className="flex justify-center space-x-8 mb-8 text-sm">
+          <div className="flex justify-center space-x-5 mb-8 text-sm">
             {['Home', 'About', 'Skills', 'Projects', 'Certification', 'Contact'].map((item) => (
     <button
       key={item}
