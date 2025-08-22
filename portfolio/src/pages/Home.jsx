@@ -3,6 +3,27 @@ import emailjs from '@emailjs/browser';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, Star, Zap, Cpu } from 'lucide-react';
 import myPhoto from '../assets/my image.png'; 
 
+//logo import
+import reactLogo from '../assets/react-logo.png'; // Updated to use ES module import
+import reactNativeLogo from '../assets/react-native-logo.png';
+import javaLogo from '../assets/java-logo.png';
+import jsLogo from '../assets/js-logo.png';
+import htmlcssLogo from '../assets/htmlcss-logo.png';
+import phpLogo from '../assets/hp-lpogo.png';
+import pythonLogo from '../assets/python-logo.png';
+import nodejsLogo from '../assets/nodejs-logo.png';
+import firebaseLogo from '../assets/firebase-logo.png';
+import mongodbLogo from '../assets/mongodb-logo.png';
+import mysqlLogo from '../assets/mysql-logo.png';
+import gitLogo from '../assets/git-logo.png';
+import figmaLogo from '../assets/figma-logo.png';
+import qaManualLogo from '../assets/qam-logo.png';
+import qaAutomationLogo from '../assets/qaa-logo.png';
+import baLogo from '../assets/ba-logo.png';
+import cloudaiLogo from '../assets/cloudai-logo.png';
+
+
+
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -200,14 +221,24 @@ const Portfolio = () => {
   };
 
   const skills = [
-    { name: 'JavaScript', level: 85, icon: <Code className="w-6 h-6" />, color: 'from-yellow-400 to-orange-500' },
-    { name: 'React', level: 80, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500' },
-    { name: 'Python', level: 75, icon: <Cpu className="w-6 h-6" />, color: 'from-green-400 to-blue-500' },
-    { name: 'Node.js', level: 70, icon: <Database className="w-6 h-6" />, color: 'from-green-500 to-emerald-500' },
-    { name: 'MySQL', level: 75, icon: <Database className="w-6 h-6" />, color: 'from-blue-500 to-indigo-500' },
-    { name: 'HTML/CSS', level: 90, icon: <Globe className="w-6 h-6" />, color: 'from-red-400 to-pink-500' },
-    { name: 'Git', level: 80, icon: <Code className="w-6 h-6" />, color: 'from-orange-400 to-red-500' },
-    { name: 'Mobile Dev', level: 65, icon: <Smartphone className="w-6 h-6" />, color: 'from-purple-400 to-pink-500' }
+    // { name: 'React.js', level: 85, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500', logo: require('../assets/react-logo.png') },
+    { name: 'React.js', level: 85, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500', logo: reactLogo },
+    { name: 'React Native', level: 70, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-green-400', logo: reactNativeLogo },
+    { name: 'Java', level: 80, icon: <Cpu className="w-6 h-6" />, color: 'from-yellow-400 to-orange-500', logo: javaLogo },
+    { name: 'JavaScript', level: 70, icon: <Code className="w-6 h-6" />, color: 'from-yellow-400 to-orange-500', logo: jsLogo },
+    { name: 'HTML/CSS', level: 85, icon: <Globe className="w-6 h-6" />, color: 'from-red-400 to-pink-500', logo: htmlcssLogo },
+    { name: 'PHP', level: 60, icon: <Code className="w-6 h-6" />, color: 'from-indigo-400 to-purple-500', logo: phpLogo },
+    { name: 'Python', level: 50, icon: <Cpu className="w-6 h-6" />, color: 'from-green-400 to-blue-500', logo: pythonLogo },
+    { name: 'Node.js', level: 70, icon: <Database className="w-6 h-6" />, color: 'from-green-500 to-emerald-500', logo: nodejsLogo },
+    { name: 'Firebase', level: 75, icon: <Database className="w-6 h-6" />, color: 'from-yellow-400 to-orange-500', logo: firebaseLogo },
+    { name: 'MongoDB', level: 80, icon: <Database className="w-6 h-6" />, color: 'from-green-400 to-blue-500', logo: mongodbLogo },
+    { name: 'MySQL', level: 85, icon: <Database className="w-6 h-6" />, color: 'from-blue-500 to-indigo-500', logo: mysqlLogo },
+    { name: 'Git', level: 80, icon: <Code className="w-6 h-6" />, color: 'from-orange-400 to-red-500', logo: gitLogo },
+    { name: 'Figma (UI/UX Design)', level: 85, icon: <Star className="w-6 h-6" />, color: 'from-pink-400 to-purple-500', logo: figmaLogo },
+    { name: 'QA Testing (Manual)', level: 90, icon: <Star className="w-6 h-6" />, color: 'from-green-400 to-yellow-400', logo: qaManualLogo },
+    { name: 'QA Testing (Automation)', level: 60, icon: <Star className="w-6 h-6" />, color: 'from-blue-400 to-green-400', logo: qaAutomationLogo },
+    { name: 'Business Analysis', level: 80, icon: <Cpu className="w-6 h-6" />, color: 'from-purple-400 to-pink-500', logo: baLogo },
+    { name: 'Cloud & AI Basics', level: 65, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-purple-500', logo: cloudaiLogo }
   ];
 
   const projects = [
@@ -328,7 +359,7 @@ const Portfolio = () => {
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               IT Undergraduate passionate about creating 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"> innovative solutions </span>
-              and building amazing digital experiences
+              and Frontend Developer | QA Engineer | Business Analyst | Figma Designer | Web Developer 
             </p>
             
             <div className="flex justify-center space-x-4 mb-12">
@@ -396,10 +427,10 @@ const Portfolio = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
            <div className="relative">
-  <div className="w-80 h-80 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-full mx-auto flex items-center justify-center relative overflow-hidden group">
+  <div className="w-81 h-81 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-full mx-auto flex items-center justify-center relative overflow-hidden group">
     <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 animate-spin-slow opacity-20"></div>
     <div className="w-76 h-76 bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center relative z-10 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-      {/* Replace 👨‍💻 with your photo */}
+      
       <img
         src={myPhoto}
         //alt="K T Kodithuwakku"
@@ -407,8 +438,8 @@ const Portfolio = () => {
       />
     </div>
   </div>
-              {/* Floating icons around avatar */}
-             <div className="absolute top-10 left-10 text-blue-400 animate-bounce">
+              
+  <div className="absolute top-10 left-10 text-blue-400 animate-bounce">
     <Code className="w-6 h-6" />
   </div>
   <div className="absolute top-20 right-10 text-purple-400 animate-bounce" style={{animationDelay: '0.5s'}}>
@@ -468,28 +499,27 @@ const Portfolio = () => {
             {skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-gray-600 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group relative overflow-hidden"
+                className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-gray-600 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group relative overflow-hidden flex items-center"
                 style={{animationDelay: `${index * 0.1}s`}}
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                
-                <div className="flex items-center mb-4 relative z-10">
-                  <div className={`text-transparent bg-clip-text bg-gradient-to-r ${skill.color} mr-3 group-hover:scale-110 transition-transform duration-300`}>
-                    {skill.icon}
+                <img src={skill.logo} alt={skill.name + ' logo'} className="w-10 h-10 mr-4 object-contain" />
+                <div className="flex-1">
+                  <div className="flex items-center mb-4 relative z-10">
+                    <div className={`text-transparent bg-clip-text bg-gradient-to-r ${skill.color} mr-3 group-hover:scale-110 transition-transform duration-300`}>
+                      {skill.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold group-hover:text-white transition-colors duration-300">{skill.name}</h3>
                   </div>
-                  <h3 className="text-lg font-semibold group-hover:text-white transition-colors duration-300">{skill.name}</h3>
-                </div>
-                
-                <div className="w-full bg-gray-600/50 rounded-full h-3 relative overflow-hidden">
-                  <div
-                    className={`bg-gradient-to-r ${skill.color} h-3 rounded-full transition-all duration-1000 relative`}
-                    style={{ width: `${skill.level}%` }}
-                  >
-                    <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                  <div className="w-full bg-gray-600/50 rounded-full h-3 relative overflow-hidden">
+                    <div
+                      className={`bg-gradient-to-r ${skill.color} h-3 rounded-full transition-all duration-1000 relative`}
+                      style={{ width: `${skill.level}%` }}
+                    >
+                      <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                    </div>
                   </div>
+                  <p className="text-sm text-gray-400 mt-2 group-hover:text-gray-300 transition-colors duration-300">{skill.level}%</p>
                 </div>
-                <p className="text-sm text-gray-400 mt-2 group-hover:text-gray-300 transition-colors duration-300">{skill.level}%</p>
-                
                 {/* Floating particles in skill cards */}
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Star className="w-4 h-4 text-yellow-400 animate-pulse" />
@@ -499,6 +529,7 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
 
 
 
@@ -577,6 +608,7 @@ const Portfolio = () => {
 
 
 
+
       {/* Certification Section */}
 <section id="certification" className="py-20 bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-gray-800/50 relative">
   <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
@@ -622,6 +654,7 @@ const Portfolio = () => {
   </div>
   </div>
 </section>
+
 
 
 
@@ -736,6 +769,7 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
 
 
 
