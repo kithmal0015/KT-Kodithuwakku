@@ -244,35 +244,38 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React frontend and Node.js backend',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-      github: '#',
-      demo: '#',
+      title: 'Car Rental Admin Dashboard',
+      description: '""Speed Cabs is a real-world vehicle rental company project, developed as our second-year group project with a mobile application."',
+      tech: ['React', 'Node.js', 'Firebase', 'Material-UI','Chart.js'],
+      github: 'https://github.com/kithmal0015/Car-Rental-Admin-Dashboard.git',
+      //demo: '#',
       gradient: 'from-blue-600 via-purple-600 to-pink-600'
     },
+   
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates',
-      tech: ['React', 'Firebase', 'Material-UI', 'JavaScript'],
-      github: '#',
-      demo: '#',
-      gradient: 'from-green-400 via-blue-500 to-purple-600'
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application with location-based forecasting',
+      title: 'Mail Management System Backend',
+      description: '"A RESTful API built with ASP.NET Core Web API to manage university mail, departments, and delivery statuses with full CRUD operations."',
       tech: ['JavaScript', 'HTML/CSS', 'Weather API', 'Chart.js'],
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/kithmal0015/Mail-Management-System-Backend.git',
+      //demo: '#',
       gradient: 'from-yellow-400 via-orange-500 to-red-500'
     },
+
+     {
+      title: 'E-Market Front End',
+      description: '"This project About E-Market Front End, Develop using React"',
+      tech: ['React', 'JavaScript', 'HTML/CSS','Node.js'],
+      github: 'https://github.com/kithmal0015/E--Market-Front-End.git',
+      //demo: '#',
+      gradient: 'from-green-400 via-blue-500 to-purple-600'
+    },
+
     {
       title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website showcasing my projects and skills',
+      description: '"As an IT undergraduate, I built my portfolio as a digital CV showcasing my introduction, skills, certifications, projects, and contact details."',
       tech: ['React', 'Tailwind CSS', 'JavaScript', 'Responsive Design'],
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/kithmal0015/My-portfolio.git',
+      //demo: '#',
       gradient: 'from-purple-500 via-pink-500 to-red-500'
     }
   ];
@@ -458,7 +461,7 @@ const Portfolio = () => {
       
       <img
         src={myPhoto}
-        //alt="K T Kodithuwakku"
+        alt="K T Kodithuwakku"
         className="w-full h-full object-cover rounded-full"
       />
     </div>
