@@ -1,3 +1,7 @@
+import SkillsMarquee from './SkillsMarquee';
+import dashbordImg from '../assets/Dashbord.jpg';
+import Certification from './Certification';
+import Articles from './Articles';
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, Star, Zap, Cpu } from 'lucide-react';
@@ -18,7 +22,7 @@ import mongodbLogo from '../assets/mongodb-logo.png';
 import mysqlLogo from '../assets/mysql-logo.png';
 import gitLogo from '../assets/git-logo.png';
 import figmaLogo from '../assets/figma-logo.png';
-import qaManualLogo from '../assets/qam-logo.png';
+//import qaManualLogo from '../assets/qam-logo.png';
 import qaAutomationLogo from '../assets/qaa-logo.png';
 import baLogo from '../assets/ba-logo.png';
 import cloudaiLogo from '../assets/cloudai-logo.png';
@@ -223,23 +227,22 @@ const Portfolio = () => {
 
   const skills = [
     // { name: 'React.js', level: 85, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500', logo: require('../assets/react-logo.png') },
-    { name: 'React.js', level: 85, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500', logo: reactLogo },
-    { name: 'React Native', level: 70, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-green-400', logo: reactNativeLogo },
-    { name: 'Java', level: 80, icon: <Cpu className="w-6 h-6" />, color: 'from-yellow-400 to-orange-500', logo: javaLogo },
-    { name: 'JavaScript', level: 70, icon: <Code className="w-6 h-6" />, color: 'from-yellow-400 to-orange-500', logo: jsLogo },
-    { name: 'HTML/CSS', level: 85, icon: <Globe className="w-6 h-6" />, color: 'from-red-400 to-pink-500', logo: htmlcssLogo },
-    { name: 'PHP', level: 60, icon: <Code className="w-6 h-6" />, color: 'from-indigo-400 to-purple-500', logo: phpLogo },
-    { name: 'Python', level: 50, icon: <Cpu className="w-6 h-6" />, color: 'from-green-400 to-blue-500', logo: pythonLogo },
-    { name: 'Node.js', level: 70, icon: <Database className="w-6 h-6" />, color: 'from-green-500 to-emerald-500', logo: nodejsLogo },
-    { name: 'Firebase', level: 75, icon: <Database className="w-6 h-6" />, color: 'from-yellow-400 to-orange-500', logo: firebaseLogo },
-    { name: 'MongoDB', level: 80, icon: <Database className="w-6 h-6" />, color: 'from-green-400 to-blue-500', logo: mongodbLogo },
-    { name: 'MySQL', level: 85, icon: <Database className="w-6 h-6" />, color: 'from-blue-500 to-indigo-500', logo: mysqlLogo },
-    { name: 'Git', level: 80, icon: <Code className="w-6 h-6" />, color: 'from-orange-400 to-red-500', logo: gitLogo },
-    { name: 'Figma (UI/UX Design)', level: 85, icon: <Star className="w-6 h-6" />, color: 'from-pink-400 to-purple-500', logo: figmaLogo },
-    { name: 'QA Testing (Manual)', level: 90, icon: <Star className="w-6 h-6" />, color: 'from-green-400 to-yellow-400', logo: qaManualLogo },
-    { name: 'QA Testing (Automation)', level: 60, icon: <Star className="w-6 h-6" />, color: 'from-blue-400 to-green-400', logo: qaAutomationLogo },
-    { name: 'Business Analysis', level: 80, icon: <Cpu className="w-6 h-6" />, color: 'from-purple-400 to-pink-500', logo: baLogo },
-    { name: 'Cloud & AI Basics', level: 65, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-purple-500', logo: cloudaiLogo }
+    { name: 'React.js', color: 'from-blue-400 to-cyan-500', icon: <Zap className="w-6 h-6" />, logo: reactLogo },
+    { name: 'React Native', color: 'from-blue-400 to-cyan-500', icon: <Zap className="w-6 h-6" />, logo: reactNativeLogo },
+    { name: 'Java', color: 'from-blue-400 to-cyan-500', icon: <Cpu className="w-6 h-6" />, logo: javaLogo },
+    { name: 'JavaScript', color: 'from-blue-400 to-cyan-500', icon: <Code className="w-6 h-6" />, logo: jsLogo },
+    { name: 'HTML/CSS', color: 'from-blue-400 to-cyan-500', icon: <Globe className="w-6 h-6" />, logo: htmlcssLogo },
+    { name: 'PHP', color: 'from-blue-400 to-cyan-500', icon: <Code className="w-6 h-6" />, logo: phpLogo },
+    { name: 'Python', color: 'from-blue-400 to-cyan-500', icon: <Cpu className="w-6 h-6" />, logo: pythonLogo },
+    { name: 'Node.js', color: 'from-blue-400 to-cyan-500', icon: <Database className="w-6 h-6" />, logo: nodejsLogo },
+    { name: 'MySQL', color: 'from-blue-400 to-cyan-500', icon: <Database className="w-6 h-6" />, logo: mysqlLogo },
+    { name: 'Git', color: 'from-blue-400 to-cyan-500', icon: <Code className="w-6 h-6" />, logo: gitLogo },
+    { name: 'Figma Design', color: 'from-blue-400 to-cyan-500', icon: <Star className="w-6 h-6" />, logo: figmaLogo },
+    { name: 'QA Testing', color: 'from-blue-400 to-cyan-500', icon: <Star className="w-6 h-6" />, logo: qaAutomationLogo },
+    { name: 'Business Analysis', color: 'from-blue-400 to-cyan-500', icon: <Cpu className="w-6 h-6" />, logo: baLogo },
+    { name: 'Cloud & AI Basics', color: 'from-blue-400 to-cyan-500', icon: <Zap className="w-6 h-6" />, logo: cloudaiLogo },
+    { name: 'Firebase', color: 'from-blue-400 to-cyan-500', icon: <Cpu className="w-6 h-6" />, logo: firebaseLogo },
+    { name: 'MongoDB', color: 'from-blue-400 to-cyan-500', icon: <Database className="w-6 h-6" />, logo: mongodbLogo }
   ];
 
   const projects = [
@@ -296,7 +299,7 @@ const Portfolio = () => {
             
              {/* Desktop Navigation */}
       <div className="hidden md:flex space-x-8">
-        {['Home', 'About', 'Skills', 'Projects', 'Certification', 'Contact'].map((item) => (
+      {['Home', 'About', 'Skills', 'Projects',  'Certification', 'Articles', 'Contact'].map((item) => (
           <button
             key={item}
             onClick={() => scrollToSection(item.toLowerCase())}
@@ -324,7 +327,7 @@ const Portfolio = () => {
   {isMenuOpen && (
     <div className="md:hidden bg-gray-800/95 backdrop-blur-md border-t border-gray-700/50">
       <div className="px-2 pt-2 pb-3 space-y-1">
-        {['Home', 'About', 'Skills', 'Projects', 'Certification', 'Contact'].map((item) => (
+  {['Home', 'About', 'Skills', 'Projects', 'Articles', 'Certification', 'Contact'].map((item) => (
           <button
             key={item}
             onClick={() => scrollToSection(item.toLowerCase())}
@@ -348,24 +351,25 @@ const Portfolio = () => {
             <div className="mb-8 relative">
               <div className="w-32 h-32 mx-auto relative">
                 {/* SVG Stroke Animation */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 128 128">
-                  <circle
-                    cx="64" cy="64" r="60"
-                    fill="none"
-                    stroke="url(#avatarGradient)"
-                    strokeWidth="4"
-                    strokeDasharray="377"
-                    strokeDashoffset="377"
-                    className="avatar-stroke-animate"
-                  />
-                  <defs>
-                    <linearGradient id="avatarGradient" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#60a5fa" />
-                      <stop offset="0.5" stopColor="#a78bfa" />
-                      <stop offset="1" stopColor="#ec4899" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 128 128">
+      <circle
+        cx="64" cy="64" r="60"
+        fill="none"
+        stroke="url(#avatarGradient)"
+        strokeWidth="4"
+        strokeDasharray="377"
+        strokeDashoffset="377"
+        className="avatar-stroke-animate"
+      />
+      <defs>
+        <linearGradient id="avatarGradient" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#60a5fa" />
+          <stop offset="0.5" stopColor="#a78bfa" />
+          <stop offset="1" stopColor="#ec4899" />
+        </linearGradient>
+      </defs>
+    </svg>
+    
                 <div className="absolute inset-2 bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
                   <img src={ktkImage} alt="KTK" className="w-27 h-27 object-cover rounded-full" />
                 </div>
@@ -510,12 +514,11 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
-      </section>
+  </section>
 
+ 
 
-
-
-      {/* Skills Section */}
+  {/* Skills Section */}
       <section id="skills" className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/50 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -526,38 +529,7 @@ const Portfolio = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-gray-600 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group relative overflow-hidden flex items-center"
-                style={{animationDelay: `${index * 0.1}s`}}
-              >
-                <img src={skill.logo} alt={skill.name + ' logo'} className="w-10 h-10 mr-4 object-contain" />
-                <div className="flex-1">
-                  <div className="flex items-center mb-4 relative z-10">
-                    <div className={`text-transparent bg-clip-text bg-gradient-to-r ${skill.color} mr-3 group-hover:scale-110 transition-transform duration-300`}>
-                      {skill.icon}
-                    </div>
-                    <h3 className="text-lg font-semibold group-hover:text-white transition-colors duration-300">{skill.name}</h3>
-                  </div>
-                  <div className="w-full bg-gray-600/50 rounded-full h-3 relative overflow-hidden">
-                    <div
-                      className={`bg-gradient-to-r ${skill.color} h-3 rounded-full transition-all duration-1000 relative`}
-                      style={{ width: `${skill.level}%` }}
-                    >
-                      <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-400 mt-2 group-hover:text-gray-300 transition-colors duration-300">{skill.level}%</p>
-                </div>
-                {/* Floating particles in skill cards */}
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Star className="w-4 h-4 text-yellow-400 animate-pulse" />
-                </div>
-              </div>
-            ))}
-          </div>
+          <SkillsMarquee skills={skills} />
         </div>
       </section>
 
@@ -638,57 +610,11 @@ const Portfolio = () => {
 
 
 
+ {/* Certification Section */}
+  <Certification />
 
-
-      {/* Certification Section */}
-<section id="certification" className="py-20 bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-gray-800/50 relative">
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-        Certifications
-      </h2>
-      <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
-    </div>
-    {/* Example certification cards */}
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-blue-400 transition-all duration-300">
-      <h3 className="text-xl font-bold text-blue-400 mb-2">React Developer Certificate</h3>
-      <p className="text-gray-300 mb-2">Coursera | 2024</p>
-      <a href="#" className="text-blue-400 hover:underline">View Credential</a>
-    </div>
-    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-purple-400 transition-all duration-300">
-      <h3 className="text-xl font-bold text-purple-400 mb-2">Python for Everybody</h3>
-      <p className="text-gray-300 mb-2">edX | 2023</p>
-      <a href="#" className="text-purple-400 hover:underline">View Credential</a>
-    </div>
-    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-pink-400 transition-all duration-300">
-      <h3 className="text-xl font-bold text-pink-400 mb-2">Full Stack Developer</h3>
-      <p className="text-gray-300 mb-2">Udacity | 2023</p>
-      <a href="#" className="text-pink-400 hover:underline">View Credential</a>
-    </div>
-    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-blue-400 transition-all duration-300">
-      <h3 className="text-xl font-bold text-blue-400 mb-2">React Developer Certificate</h3>
-      <p className="text-gray-300 mb-2">Coursera | 2024</p>
-      <a href="#" className="text-blue-400 hover:underline">View Credential</a>
-    </div>
-    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-purple-400 transition-all duration-300">
-      <h3 className="text-xl font-bold text-purple-400 mb-2">Python for Everybody</h3>
-      <p className="text-gray-300 mb-2">edX | 2023</p>
-      <a href="#" className="text-purple-400 hover:underline">View Credential</a>
-    </div>
-    <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50 hover:border-pink-400 transition-all duration-300">
-      <h3 className="text-xl font-bold text-pink-400 mb-2">Full Stack Developer</h3>
-      <p className="text-gray-300 mb-2">Udacity | 2023</p>
-      <a href="#" className="text-pink-400 hover:underline">View Credential</a>
-    </div>
-  </div>
-  </div>
-</section>
-
-
-
-
+ {/* Articles Section */}
+  <Articles />
 
 
       {/* Contact Section */}
@@ -819,13 +745,13 @@ const Portfolio = () => {
             {/* Social Links */}
             <div className="flex justify-center space-x-6 mb-8">
               <a 
-                href="#https://github.com/kithmal0015" 
+                href="https://github.com/kithmal0015" 
                 className="group bg-gray-700/50 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
               >
                 <Github className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors duration-300" />
               </a>
               <a 
-                href="#https://www.linkedin.com/in/kithmal-tharinda-kodithuwakku-7b368a272/" 
+                href="https://www.linkedin.com/in/kithmal-tharinda-kodithuwakku-7b368a272/" 
                 className="group bg-gray-700/50 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
               >
                 <Linkedin className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors duration-300" />
@@ -840,7 +766,7 @@ const Portfolio = () => {
             
             {/* Quick Links */}
           <div className="flex justify-center space-x-5 mb-8 text-sm">
-            {['Home', 'About', 'Skills', 'Projects', 'Certification', 'Contact'].map((item) => (
+            {['Home', 'About', 'Skills', 'Projects',  'Certification', 'Articles','Contact'].map((item) => (
     <button
       key={item}
       onClick={() => scrollToSection(item.toLowerCase())}
