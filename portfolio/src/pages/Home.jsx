@@ -1,15 +1,15 @@
 import SkillsMarquee from './SkillsMarquee';
-import dashbordImg from '../assets/Dashbord.jpg';
 import Certification from './Certification';
 import Articles from './Articles';
+import About from './About';
+import Projects from './Projects';
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, Star, Zap, Cpu } from 'lucide-react';
-import myPhoto from '../assets/my image.png'; 
 import ktkImage from '../assets/KTK.png';
 
 //logo import
-import reactLogo from '../assets/react-logo.png'; // Updated to use ES module import
+import reactLogo from '../assets/react-logo.png'; 
 import reactNativeLogo from '../assets/react-native-logo.png';
 import javaLogo from '../assets/java-logo.png';
 import jsLogo from '../assets/js-logo.png';
@@ -22,7 +22,6 @@ import mongodbLogo from '../assets/mongodb-logo.png';
 import mysqlLogo from '../assets/mysql-logo.png';
 import gitLogo from '../assets/git-logo.png';
 import figmaLogo from '../assets/figma-logo.png';
-//import qaManualLogo from '../assets/qam-logo.png';
 import qaAutomationLogo from '../assets/qaa-logo.png';
 import baLogo from '../assets/ba-logo.png';
 import cloudaiLogo from '../assets/cloudai-logo.png';
@@ -30,6 +29,51 @@ import cloudaiLogo from '../assets/cloudai-logo.png';
 
 
 const Portfolio = () => {
+    // Typing effect states
+  const [typedText, setTypedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [delta, setDelta] = useState(150);
+
+  // Roles for typing animation
+  const roles = [
+    "  Front-End Developer",
+    "  Quality Assurance Engineer",
+    "  Business Analyst",
+    "  Web Developer",
+  ];
+
+  // Typing animation logic
+  useEffect(() => {
+    const handleTyping = () => {
+      const i = loopNum % roles.length;
+      const fullText = roles[i];
+
+      setTypedText(
+        isDeleting
+          ? fullText.substring(0, typedText.length - 1)
+          : fullText.substring(0, typedText.length + 1)
+      );
+
+      if (!isDeleting && typedText === fullText) {
+        setIsDeleting(true);
+        setDelta(100);
+      } else if (isDeleting && typedText === "") {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setDelta(150);
+      }
+    };
+
+    const ticker = setTimeout(() => {
+      handleTyping();
+    }, delta);
+
+    return () => clearTimeout(ticker);
+  }, [typedText, isDeleting, delta, loopNum]);
+
+  // Smooth scroll to section
+  // (Removed duplicate declaration)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -68,18 +112,6 @@ const Portfolio = () => {
     };
 
   
-
-  /* Track mouse position for interactive effects
-  //useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);*/
-
-
   // Smooth scrolling to sections
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -226,7 +258,6 @@ const Portfolio = () => {
   };
 
   const skills = [
-    // { name: 'React.js', level: 85, icon: <Zap className="w-6 h-6" />, color: 'from-blue-400 to-cyan-500', logo: require('../assets/react-logo.png') },
     { name: 'React.js', color: 'from-blue-400 to-cyan-500', icon: <Zap className="w-6 h-6" />, logo: reactLogo },
     { name: 'React Native', color: 'from-blue-400 to-cyan-500', icon: <Zap className="w-6 h-6" />, logo: reactNativeLogo },
     { name: 'Java', color: 'from-blue-400 to-cyan-500', icon: <Cpu className="w-6 h-6" />, logo: javaLogo },
@@ -280,8 +311,41 @@ const Portfolio = () => {
       github: 'https://github.com/kithmal0015/My-portfolio.git',
       //demo: '#',
       gradient: 'from-purple-500 via-pink-500 to-red-500'
+    },
+    {
+      title: 'Gym Management System in C#',
+      description: '"A comprehensive gym management system developed in C# to manage memberships, workouts, and schedules."',
+      tech: ['C#', 'ASP.NET', 'Entity Framework', 'SQL Server'],
+      github: 'https://github.com/kithmal0015/Web-Projects.git',
+      //demo: '#',
+      gradient: 'from-blue-600 via-purple-600 to-pink-600'
+    },
+    {
+      title: 'Mobile-Application-Promotional-Web',
+      description: '"A promotional web application for mobile app showcasing features, benefits, and download links."',
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      github: 'https://github.com/kithmal0015/Mobile-Application-Promotional-Web.git',
+      //demo: '#',
+      gradient: 'from-yellow-400 via-orange-500 to-red-500'
+    },
+     {
+      title: 'TCP-Communication',
+      description: '"This project demonstrates how to build a distributed calculator using .NET Core and gRPC"',
+      tech: ['C#', 'gRPC', 'Protobuf'],
+      github: 'https://github.com/kithmal0015/TCP-Communication.git',
+      //demo: '#',
+      gradient: 'from-green-400 via-blue-500 to-purple-600'
+    },
+    {
+      title: 'Remote-Programing---gRPC',
+      description: '"About gRPC is a cross-platform, high-performance, open-source framework for Remote Procedure Calls (RPC)."',
+      tech: ['C#', 'gRPC', 'ASP.NET', 'Restful API'],
+      github: 'https://github.com/kithmal0015/Remote-Programing---gRPC.git',
+      //demo: '#',
+      gradient: 'from-purple-500 via-pink-500 to-red-500'
     }
   ];
+  
 
   return (
     <div className="bg-gray-900 text-white min-h-screen relative overflow-hidden">
@@ -383,9 +447,19 @@ const Portfolio = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              IT Undergraduate passionate about creating 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"> innovative solutions </span>
-              and Frontend Developer | QA Engineer | Business Analyst | Figma Designer | Web Developer 
+              I am an IT graduate, passionate about building innovative solutions, with strong interests in
+              <span className="text-transparent text-2xl font-bold bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                {typedText}
+                <span className="blinking-cursor">|</span>
+              </span>
+              <style>{`
+                .blinking-cursor {
+                  animation: blink 1s steps(2, start) infinite;
+                }
+                @keyframes blink {
+                  to { opacity: 0; }
+                }
+              `}</style>
             </p>
             
             <div className="flex justify-center space-x-4 mb-12">
@@ -444,79 +518,8 @@ const Portfolio = () => {
       </section>
 
 
-
-
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-gray-800/50 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              About Me
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-           <div className="relative">
-  <div className="w-81 h-81 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-full mx-auto flex items-center justify-center relative overflow-hidden group">
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 animate-spin-slow opacity-20"></div>
-    <div className="w-76 h-76 bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center relative z-10 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-      
-      <img
-        src={myPhoto}
-        alt="K T Kodithuwakku"
-        className="w-full h-full object-cover rounded-full"
-      />
-    </div>
-  </div>
-              
-  <div className="absolute top-10 left-10 text-blue-400 animate-bounce">
-    <Code className="w-6 h-6" />
-  </div>
-  <div className="absolute top-20 right-10 text-purple-400 animate-bounce" style={{animationDelay: '0.5s'}}>
-    <Database className="w-6 h-6" />
-  </div>
-  <div className="absolute bottom-20 left-20 text-pink-400 animate-bounce" style={{animationDelay: '1s'}}>
-    <Globe className="w-6 h-6" />
-  </div>
-</div>
-            
-            <div className="space-y-6">
-              <p className="text-lg text-gray-300 leading-relaxed relative">
-                I'm a passionate IT undergraduate with a strong foundation in software development 
-                and a keen interest in emerging technologies. My journey in technology began with 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"> curiosity </span>
-                and has evolved into a dedication to creating meaningful digital solutions.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                I enjoy working on both frontend and backend development, always striving to learn 
-                new technologies and improve my skills. My goal is to contribute to 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500"> innovative projects </span>
-                that make a positive impact on people's lives.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6 mt-8">
-                <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 group">
-                  <h3 className="font-semibold text-blue-400 mb-2 group-hover:text-blue-300">Education</h3>
-                  <p className="text-gray-300"> Bachelor of Information Technology - KDU </p>
-
-                  <p className="text-sm text-gray-400">2023 to 2026 (Expected) </p>
-                </div>
-                <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-purple-400/50 transition-all duration-300 group">
-                  <h3 className="font-semibold text-purple-400 mb-2 group-hover:text-purple-300">Focus Areas</h3>
-                  <p className="text-gray-300">Web Development</p>
-                  <p className="text-sm text-gray-400">Frontend Development</p>
-                  <p className="text-sm text-gray-400">QA Engineering</p>
-                  <p className="text-sm text-gray-400">Business Analysis</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  </section>
-
- 
+  {/* About Section */}
+  <About />
 
   {/* Skills Section */}
       <section id="skills" className="py-20 relative">
@@ -536,79 +539,8 @@ const Portfolio = () => {
 
 
 
-
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-gray-800/50 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 to-blue-900/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Featured Projects
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50 hover:border-gray-600 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group relative overflow-hidden"
-                style={{animationDelay: `${index * 0.2}s`}}
-              >
-                {/* Animated gradient background */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-500`}></div>
-                
-                {/* Glowing border effect */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} rounded-lg blur-sm opacity-0 group-hover:opacity-20 transition-all duration-500 -z-10`}></div>
-                
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors duration-300">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-400/20 hover:bg-blue-600/30 hover:border-blue-400/40 transition-all duration-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex space-x-4">
-                    <a
-                      href={project.github}
-                      className="flex items-center text-gray-300 hover:text-blue-400 transition-all duration-300 group/link"
-                    >
-                      <Github className="w-4 h-4 mr-2 group-hover/link:scale-110 transition-transform duration-300" />
-                      Code
-                    </a>
-                    <a
-                      href={project.demo}
-                      className="flex items-center text-gray-300 hover:text-purple-400 transition-all duration-300 group/link"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2 group-hover/link:scale-110 transition-transform duration-300" />
-                      Demo
-                    </a>
-                  </div>
-                </div>
-
-                {/* Corner decoration */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-pulse"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
+ {/* Projects Section */}
+  <Projects />
 
  {/* Certification Section */}
   <Certification />
