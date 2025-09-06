@@ -174,7 +174,7 @@ const Portfolio = () => {
         K T K Digital Hub
       </div>
             {/* Desktop Navigation */}
-      <div className="hidden md:flex space-x-8 font-bold">
+      <div className="hidden md:flex space-x-8 font-bold ">
       {['Home', 'About', 'Skills', 'Projects',  'Certification', 'Articles', 'Contact'].map((item) => (
           <button
             key={item}
@@ -399,7 +399,7 @@ const Portfolio = () => {
                 {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-pink-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                <div className="relative z-10 space-y-6">
+                <form className="relative z-10 space-y-6" onSubmit={handleContactSubmit}>
                   <div>
                     <label className="block text-sm font-medium mb-2 text-gray-300">
                       Name
@@ -450,7 +450,10 @@ const Portfolio = () => {
                     <span className="relative z-10">Send Message</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                   </button>
-                  </div>
+                  {formStatus && (
+                    <div className="mt-4 text-green-400 font-semibold text-center">{formStatus}</div>
+                  )}
+                </form>
                 
                 
                 {/* Decorative elements */}
