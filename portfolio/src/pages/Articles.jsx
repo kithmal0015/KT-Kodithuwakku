@@ -35,7 +35,7 @@ const articles = [
     title: 'Cloud and Mobile Computing: The Perfect Duo for Business Transformation',
     date: 'January 13, 2025',
     summary: 'Exploring the synergy between cloud computing and mobile technology in driving business innovation.',
-    link: 'https://www.linkedin.com/pulse/cloud-mobile-computing-perfect-duo-business-transformationhttps://www.linkedin.com/pulse/cloud-mobile-computing-perfect-duo-business-kodithuwakku-m2lrc?trackingId=tcYkQvpXQCaN9OB%2FB8d0mg%3D%3D&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_content_view%3B%2F39wnDY5Rt6jMbYvSSWi7A%3D%3D-kodithuwakku-m2lrc'
+    link: 'https://www.linkedin.com/pulse/cloud-mobile-computing-perfect-duo-business-kodithuwakku-m2lrc'
   },
 ];
 

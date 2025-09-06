@@ -58,7 +58,7 @@ const About = () => {
               
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 group">
-                  <h3 className="font-semibold text-blue-400 mb-2 group-hover:text-blue-300">Education</h3>
+                  <h3 className="font-semibold text-blue-400 mb-2 group-hover:text-blue-300\">Education</h3>
                   <p className="text-gray-300"> Bachelor of Information Technology - KDU </p>
                   <p className="text-sm text-gray-400">2023 to 2026 (Expected) </p>
                 </div>
