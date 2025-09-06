@@ -78,9 +78,10 @@ const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   
-    // Contact form state
-    const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
-    const [formStatus, setFormStatus] = useState('');
+  // Contact form state
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+  const [formStatus, setFormStatus] = useState('');
+  const [isHuman, setIsHuman] = useState(false);
 
     const handleContactChange = (e) => {
       const { name, value } = e.target;
@@ -89,21 +90,26 @@ const Portfolio = () => {
 
     const handleContactSubmit = (e) => {
       e.preventDefault();
+      if (!isHuman) {
+        setFormStatus('Please confirm you are human.');
+        return;
+      }
       setFormStatus('Sending...');
-        emailjs.send(
-          'service_59sisvb',
-          'template_jtnfvln',
-          {
-            from_name: contactForm.name,
-            from_email: contactForm.email,
-            message: contactForm.message,
-          },
-          'prWynF6MLefTLNOL8'
-        )
+      emailjs.send(
+        'service_59sisvb',
+        'template_jtnfvln',
+        {
+          from_name: contactForm.name,
+          from_email: contactForm.email,
+          message: contactForm.message,
+        },
+        'prWynF6MLefTLNOL8'
+      )
       .then(
         () => {
           setFormStatus('Message sent!');
           setContactForm({ name: '', email: '', message: '' });
+          setIsHuman(false);
         },
         (error) => {
           setFormStatus('Failed to send. Please try again.');
@@ -173,7 +179,8 @@ const Portfolio = () => {
       <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
         K T K Digital Hub
       </div>
-            {/* Desktop Navigation */}
+
+      {/* Desktop Navigation */}
       <div className="hidden md:flex space-x-8 font-bold ">
       {['Home', 'About', 'Skills', 'Projects',  'Certification', 'Articles', 'Contact'].map((item) => (
           <button
@@ -443,9 +450,22 @@ const Portfolio = () => {
                     ></textarea>
                   </div>
 
+                  <div className="flex items-center mb-4">
+                    <input
+                      type="checkbox"
+                      id="humanCheck"
+                      checked={isHuman}
+                      onChange={(e) => setIsHuman(e.target.checked)}
+                      className="mr-2 accent-blue-500"
+                    />
+                    <label htmlFor="humanCheck" className="text-gray-300 text-sm select-none">
+                      I am not a robot
+                    </label>
+                  </div>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl relative overflow-hidden group/btn"
+                    disabled={!isHuman}
+                    className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl relative overflow-hidden group/btn ${!isHuman ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
                     <span className="relative z-10">Send Message</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
