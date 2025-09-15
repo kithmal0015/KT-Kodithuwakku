@@ -40,10 +40,10 @@ const articles = [
 ];
 
 const Articles = () => (
-  <section id="articles" className="py-20 bg-gradient-to-br from-gray-800/60 via-gray-900/80 to-gray-800/60 relative">
+  <section id="articles" className="font-Libertinus-Sans py-20 bg-gradient-to-br from-gray-800/60 via-gray-900/80 to-gray-800/60 relative">
     <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 relative z-10">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Articles</h2>
+        <h2 className="font-cinzel text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Articles</h2>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -10,7 +10,7 @@ const Footer = ({ scrollToSection }) => {
         <div className="text-center">
           {/* Logo/Brand */}
           <div className="mb-6">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-goldman font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Kithmal Tharinda Kodithuwakku
             </h3>
           </div>
@@ -36,7 +36,7 @@ const Footer = ({ scrollToSection }) => {
             </a>
           </div>
           {/* Quick Links */}
-          <div className="font-bold flex justify-center space-x-2 mb-6 text-sm">
+          <div className="font-goldman flex justify-center space-x-2 mb-6 text-sm">
             {['Home', 'About', 'Skills', 'Projects',  'Certificats', 'Articles','Contact'].map((item) => (
               <button
                 key={item}
@@ -49,7 +49,7 @@ const Footer = ({ scrollToSection }) => {
             ))}
           </div>
           {/* Copyright */}
-          <div className="border-t border-gray-700/50 pt-8">
+          <div className="font-Libertinus-Sans border-t border-gray-700/50 pt-8">
             <p className="text-gray-400 text-sm">
               © 2025 K T Kodithuwakku.Built with 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"> React </span>

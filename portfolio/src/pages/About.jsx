@@ -12,7 +12,7 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="font-cinzel text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               About Me
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
@@ -42,8 +42,8 @@ const About = () => {
               </div>
             </div>
             
-            <div className="space-y-6">
-              <p className="text-lg text-gray-300 leading-relaxed relative">
+            <div className="font-Libertinus-Sans space-y-6">
+              <p className=" text-lg text-gray-300 leading-relaxed relative">
                 I'm a passionate IT undergraduate with a strong foundation in software development 
                 and a keen interest in emerging technologies. My journey in technology began with 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"> curiosity </span>
@@ -65,7 +65,7 @@ const About = () => {
                 <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-purple-400/50 transition-all duration-300 group">
                   <h3 className="font-semibold text-purple-400 mb-2 group-hover:text-purple-300">Focus Areas</h3>
                   <p className="text-gray-300">Web Development</p>
-                  <p className="text-sm text-gray-400">Frontend Development</p>
+                  <p className="text-sm text-gray-400">Project Management</p>
                   <p className="text-sm text-gray-400">QA Engineering</p>
                   <p className="text-sm text-gray-400">Business Analysis</p>
                 </div>

@@ -38,7 +38,7 @@ const Portfolio = () => {
 
   // Roles for typing animation
   const roles = [
-    "  Front-End Developer",
+    "  Project Management",
     "  Quality Assurance Engineer",
     "  Business Analyst",
     "  Web Developer",
@@ -176,17 +176,17 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800/50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex justify-between items-center py-4">
-      <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+      <div className="font-goldman text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
         K T K Digital Hub
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex space-x-8 font-bold ">
+      <div className="font-goldman text-md hidden md:flex space-x-7">
       {['Home', 'About', 'Skills', 'Projects',  'Certification', 'Articles', 'Contact'].map((item) => (
           <button
             key={item}
             onClick={() => scrollToSection(item.toLowerCase())}
-            className={`relative hover:text-blue-400 transition-all duration-300 group ${
+            className={`font-goldman relative hover:text-blue-400 transition-all duration-300 group ${
               activeSection === item.toLowerCase() ? 'text-blue-400' : ''
             }`}
           >
@@ -208,7 +208,7 @@ const Portfolio = () => {
 
        {/* Mobile Navigation */}
   {isMenuOpen && (
-    <div className="md:hidden bg-gray-800/95 backdrop-blur-md border-t border-gray-700/50">
+    <div className="font-goldman md:hidden bg-gray-800/95 backdrop-blur-md border-t border-gray-700/50">
       <div className="px-2 pt-2 pb-3 space-y-1">
   {['Home', 'About', 'Skills', 'Projects', 'Articles', 'Certification', 'Contact'].map((item) => (
           <button
@@ -222,7 +222,7 @@ const Portfolio = () => {
       </div>
     </div>
   )}
-</nav>
+</nav> 
 
 
       {/* Home Section */}
@@ -260,17 +260,17 @@ const Portfolio = () => {
             </div>
             
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="font-cinzel text-5xl md:text-6xl font-bold mb-6">
               Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x">
+              <span className="font-cinzel bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x">
                 K T Kodithuwakku
               </span>
             </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-2 max-w-3xl mx-auto leading-relaxed">
+              <p className="font-cinzel text-xl md:text-xl text-gray-300 mb-2 max-w-3xl mx-auto leading-relaxed">
                 I am an IT graduate, passionate about building innovative solutions<br/>
                 with strong interests in,
               </p>
-              <span className="block mt-2 text-transparent text-2xl font-bold bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+              <span className="font-cinzel block mt-2 text-transparent text-xl font-bold bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
                 {typedText}
                 <span className="blinking-cursor">|</span>
               </span>
@@ -289,14 +289,14 @@ const Portfolio = () => {
                 onClick={() => scrollToSection('projects')}
                 className="relative bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group overflow-hidden"
               >
-                <span className="relative z-10">View My Work</span>
+                <span className="font-cinzel text-sm relative z-10">View My Work</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="relative border-2 border-gray-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 group overflow-hidden"
               >
-                <span className="relative z-10 group-hover:text-gray-900 transition-colors duration-300">Get In Touch</span>
+                <span className="font-cinzel text-sm relative z-10 group-hover:text-gray-900 transition-colors duration-300">Get In Touch</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
             </div>
@@ -330,11 +330,11 @@ const Portfolio = () => {
   <About />
 
   {/* Skills Section */}
-      <section id="skills" className="py-20 relative">
+      <section id="skills" className="font-Libertinus-Sans py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/50 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            //<h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="font-cinzel text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Skills & Technologies
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
@@ -360,11 +360,11 @@ const Portfolio = () => {
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 relative">
+      <section id="contact" className="font-Libertinus-Sans py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/50 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="font-cinzel text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Get In Touch
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
