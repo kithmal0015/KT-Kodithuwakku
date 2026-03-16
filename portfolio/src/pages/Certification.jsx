@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 
 const certifications = [
   {
-    title: "Business Analytics Fundamentals",
-    color: "blue-400",
-    border: "blue-400",
-    provider: "Coursera | 2024",
-    link: "https://www.coursera.org/account/accomplishments/certificate/EXAMPLE1",
-    category: "Business"
-  },
-  {
-    title: "Entrepreneurship Essentials",
+    title: "6th Student Symposium on Research about Genetic AI with QA",
     color: "purple-400",
     border: "purple-400",
-    provider: "Harvard Online | 2023",
-    link: "https://online.hbs.edu/courses/entrepreneurship-essentials/",
-    category: "Business"
+    provider: "KDU | 2026",
+    link: "https://www.linkedin.com/in/kithmal-tharinda-kodithuwakku-7b368a272/overlay/1769301263746/single-media-viewer?type=IMAGE&profileId=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BL1MqFgFXRo2Im5qlGAJg5Q%3D%3D",
+    category: "Other Certificates"
+  },
+  {
+    title: "Business Analytics Fundamentals",
+    color: "pink-400",
+    border: "pink-400",
+    provider: "Coursera | 2024",
+    link: "https://www.coursera.org/account/accomplishments/certificate/EXAMPLE1",
+    category: "Business Analytics"
   },
   {
     title: "Python in Visual Studio Code",
@@ -23,7 +23,7 @@ const certifications = [
     border: "blue-400",
     provider: "Microsoft Learn | 2025",
     link: "https://www.linkedin.com/in/kithmal-tharinda-kodithuwakku-7b368a272/details/certifications/1742275073365/single-media-viewer?type=IMAGE&profileId=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BAQw7AlEnSvu5Pe9Ru1DO8A%3D%3D",
-    category: "Web Development"
+    category: "Other Certificates"
   },
   {
     title: "Create an Agent with Copilot",
@@ -31,7 +31,7 @@ const certifications = [
     border: "purple-400",
     provider: "Microsoft Learn | 2025",
     link: "https://www.linkedin.com/in/kithmal-tharinda-kodithuwakku-7b368a272/details/certifications/1742016289902/single-media-viewer?type=IMAGE&profileId=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BAQw7AlEnSvu5Pe9Ru1DO8A%3D%3D",
-    category: "Web Development"
+    category: "Artificial intelligence"
   },
   {
     title: "Master Generative AI",
@@ -39,7 +39,7 @@ const certifications = [
     border: "pink-400",
     provider: "Alison | 2025",
     link: "https://www.linkedin.com/in/kithmal-tharinda-kodithuwakku-7b368a272/details/certifications/1738988211875/single-media-viewer?type=DOCUMENT&profileId=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BAQw7AlEnSvu5Pe9Ru1DO8A%3D%3D",
-    category: "QA"
+    category: "Artificial intelligence"
   },
   {
     title: "Computer Hardware Basics",
@@ -47,7 +47,7 @@ const certifications = [
     border: "blue-400",
     provider: "Cisco  | 2025",
     link: "https://www.linkedin.com/in/kithmal-tharinda-kodithuwakku-7b368a272/details/certifications/1756212439470/single-media-viewer?type=IMAGE&profileId=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BC0Nox8wTTtqrku%2B1PIk6PA%3D%3D",
-    category: "QA"
+    category: "Other Certificates"
   },
   {
     title: "Introduction to Networks",
@@ -55,7 +55,7 @@ const certifications = [
     border: "purple-400",
     provider: "Cisco | 2025",
     link: "https://www.linkedin.com/in/kithmal-tharinda-kodithuwakku-7b368a272/details/certifications/1756212156734/single-media-viewer?type=IMAGE&profileId=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BAQw7AlEnSvu5Pe9Ru1DO8A%3D%3D",
-    category: "QA"
+    category: "Other Certificates"
   },
   {
     title: "UI/UX Workshop",
@@ -63,7 +63,7 @@ const certifications = [
     border: "pink-400",
     provider: "CSSL | 2025",
     link: "https://www.linkedin.com/posts/kithmal-tharinda-kodithuwakku-7b368a272_uiux-userexperience-designthinking-activity-7366111214025736192-ckBp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4",
-    category: "Project Management"
+    category: "Other Certificates"
   },
   {
     title: "What Is Generative AI?",
@@ -79,7 +79,7 @@ const certifications = [
     border: "purple-400",
     provider: "HP LIFE online | 2025",
     link: "https://www.linkedin.com/posts/kithmal-tharinda-kodithuwakku-7b368a272_ai-artificialintelligence-lifelonglearning-activity-7284531580256010240-HZtA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4",
-    category: "Project Management"
+    category: "Artificial intelligence"
   },
   {
     title: "Introduction to IOT",
@@ -87,7 +87,7 @@ const certifications = [
     border: "pink-400",
     provider: "Cisco | 2023",
     link: "https://www.linkedin.com/posts/kithmal-tharinda-kodithuwakku-7b368a272_successfully-completed-internet-of-things-activity-7095982155905863680-6uV5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4",
-    category: "Web Development"
+    category: "Other Certificates"
   },
   {
     title: "ICT (NDICT)",
@@ -103,7 +103,7 @@ const certifications = [
     border: "purple-400",
     provider: "coursera | 2023",
     link: "https://www.linkedin.com/posts/kithmal-tharinda-kodithuwakku-7b368a272_completion-certificate-for-getting-started-activity-7053634445131620352--IdI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4",
-    category: "Business"
+    category: "Business Analytics"
   },
   {
     title: "Data Analysis using Microsoft Excel",
@@ -111,17 +111,18 @@ const certifications = [
     border: "pink-400",
     provider: "coursera | 2023",
     link: "https://www.linkedin.com/posts/kithmal-tharinda-kodithuwakku-7b368a272_completion-certificate-for-introduction-to-activity-7053399991075151872-tgkd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKp9_cBmmVh48zOpP6tm313g89F8CtWbc4",
-    category: "Business"
+    category: "Business Analytics"
   }
 ];
 
 const categories = [
+  "All",
   "Business Analytics",
   "Quality Assurance",
-  "Project Management",
+  "Artificial intelligence",
   "Web Development",
   "Other Certificates",
-  "All",
+
 ];
 
 const Certification = () => {
@@ -144,7 +145,7 @@ const Certification = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+  <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-8 items-center">
           {categories.map(cat => (
             <button
               key={cat}
@@ -168,10 +169,10 @@ const Certification = () => {
             return (
               <div
                 key={idx}
-                className={`bg-gray-800/50 p-6 rounded-lg border transition-all duration-300`}
-                style={{ borderColor: undefined }}
-                onMouseEnter={e => e.currentTarget.style.borderColor = borderColor}
-                onMouseLeave={e => e.currentTarget.style.borderColor = "#374151"}
+                className="bg-gray-800/50 p-6 rounded-lg transition-all duration-300"
+                style={{ border: `1.5px solid #374151` }}
+                onMouseEnter={e => e.currentTarget.style.border = `1.5px solid ${borderColor}`}
+                onMouseLeave={e => e.currentTarget.style.border = `1.5px solid #374151`}
               >
                 <h3 className={`text-xl font-bold text-${cert.color} mb-2`}>{cert.title}</h3>
                 <p className="text-gray-300 mb-2">{cert.provider}</p>

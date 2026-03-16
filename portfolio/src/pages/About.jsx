@@ -43,13 +43,14 @@ const About = () => {
             </div>
             
             <div className="font-Libertinus-Sans space-y-6">
-              <p className=" text-lg text-gray-300 leading-relaxed relative">
+              <p className="text-lg text-gray-300 leading-relaxed relative text-justify">
                 I'm a passionate IT undergraduate with a strong foundation in software development 
                 and a keen interest in emerging technologies. My journey in technology began with 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"> curiosity </span>
                 and has evolved into a dedication to creating meaningful digital solutions.
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              
+              <p className="text-lg text-gray-300 leading-relaxed text-justify">
                 I enjoy working on both frontend and backend development, always striving to learn 
                 new technologies and improve my skills. My goal is to contribute to 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500"> innovative projects </span>
@@ -58,13 +59,13 @@ const About = () => {
               
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 group">
-                  <h3 className="font-semibold text-blue-400 mb-2 group-hover:text-blue-300\">Education</h3>
+                  <h3 className="font-semibold text-blue-400 mb-2 group-hover:text-blue-300">Education</h3>
                   <p className="text-gray-300"> Bachelor of Information Technology - KDU </p>
                   <p className="text-sm text-gray-400">2023 to 2026 (Expected) </p>
                 </div>
                 <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-gray-700/50 hover:border-purple-400/50 transition-all duration-300 group">
                   <h3 className="font-semibold text-purple-400 mb-2 group-hover:text-purple-300">Focus Areas</h3>
-                  <p className="text-gray-300">Web Development</p>
+                  <p className="text-sm text-gray-400">Web Development</p>
                   <p className="text-sm text-gray-400">Project Management</p>
                   <p className="text-sm text-gray-400">QA Engineering</p>
                   <p className="text-sm text-gray-400">Business Analysis</p>

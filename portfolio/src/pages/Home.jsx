@@ -39,9 +39,9 @@ const Portfolio = () => {
   // Roles for typing animation
   const roles = [
     "  Project Management",
-    "  Quality Assurance Engineer",
+    "  Quality Assurance",
     "  Business Analyst",
-    "  Web Developer",
+    "  Web Development",
   ];
 
   // Typing animation logic
@@ -260,7 +260,7 @@ const Portfolio = () => {
             </div>
             
 
-            <h1 className="font-cinzel text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="font-cinzel text-4xl md:text-6xl font-bold mb-6">
               Hi, I'm{' '}
               <span className="font-cinzel bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x">
                 K T Kodithuwakku
@@ -296,7 +296,7 @@ const Portfolio = () => {
                 onClick={() => scrollToSection('contact')}
                 className="relative border-2 border-gray-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 group overflow-hidden"
               >
-                <span className="font-cinzel text-sm relative z-10 group-hover:text-gray-900 transition-colors duration-300">Get In Touch</span>
+                <span className="font-cinzel text-sm relative z-10 group-hover:text-gray-900 transition-colors duration-300">Contact Me</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
             </div>
@@ -365,7 +365,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-cinzel text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Get In Touch
+              Contact Me
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto animate-pulse"></div>
           </div>
@@ -376,7 +376,7 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   Let's Connect
                 </h3>
-                <p className="text-gray-300 mb-8 leading-relaxed justify-center">
+                <p className="font-Libertinus Sans text-gray-300 mb-8 leading-relaxed text-justify">
                   I am open to new projects and working partnerships. All you have to do is enter your name, email & your message and click the send message button to get your work done as you wish.
                 </p>
                 
@@ -385,19 +385,19 @@ const Portfolio = () => {
                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
                       <Mail className="w-5 h-5" />
                     </div>
-                    <span className="group-hover:text-blue-400 transition-colors duration-300">kithmaltharinda7078@gmail.com</span>
+                    <span className="font-Libertinus Sansgroup-hover:text-blue-400 transition-colors duration-300">kithmaltharinda7078@gmail.com</span>
                   </div>
                   <div className="flex items-center group hover:translate-x-2 transition-transform duration-300">
                     <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-3 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
                       <Github className="w-5 h-5" />
                     </div>
-                    <span className="group-hover:text-purple-400 transition-colors duration-300">github.com/kithmal0015</span>
+                    <span className="font-Libertinus Sansgroup-hover:text-purple-400 transition-colors duration-300">github.com/kithmal0015</span>
                   </div>
                   <div className="flex items-center group hover:translate-x-2 transition-transform duration-300">
                     <div className="bg-gradient-to-r from-pink-600 to-red-600 p-3 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
                       <Linkedin className="w-5 h-5" />
                     </div>
-                    <span className="group-hover:text-pink-400 transition-colors duration-300">linkedin.com/in/kithmal-tharinda-kodithuwakku</span>
+                    <span className="font-Libertinus Sansgroup-hover:text-pink-400 transition-colors duration-300">linkedin.com/in/kithmal-tharinda-kodithuwakku</span>
                   </div>
                 </div>
               </div>
@@ -408,7 +408,7 @@ const Portfolio = () => {
 
                 <form className="relative z-10 space-y-6" onSubmit={handleContactSubmit}>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-300">
+                    <label className="font-Libertinus Sansblock text-sm font-medium mb-2 text-gray-300">
                       Name
                     </label>
                     <input
@@ -422,7 +422,7 @@ const Portfolio = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-300">
+                    <label className="font-Libertinus Sans block text-sm font-medium mb-2 text-gray-300">
                       Email
                     </label>
                     <input
@@ -431,12 +431,12 @@ const Portfolio = () => {
                       value={contactForm.email}
                       onChange={handleContactChange}
                       className="w-full px-4 py-3 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-lg focus:outline-none focus:border-blue-400 focus:bg-gray-700/70 transition-all duration-300 hover:border-gray-500"
-                      placeholder="youremail@gmail.com"
+                      placeholder="Youremail@gmail.com"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-300">
+                    <label className="font-Libertinus Sansblock text-sm font-medium mb-2 text-gray-300">
                       Message
                     </label>
                     <textarea
@@ -458,7 +458,7 @@ const Portfolio = () => {
                       onChange={(e) => setIsHuman(e.target.checked)}
                       className="mr-2 accent-blue-500"
                     />
-                    <label htmlFor="humanCheck" className="text-gray-300 text-sm select-none">
+                    <label htmlFor="humanCheck" className="font-Libertinus Sanstext-gray-300 text-sm select-none">
                       I am not a robot
                     </label>
                   </div>
@@ -468,7 +468,7 @@ const Portfolio = () => {
                     className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl relative overflow-hidden group/btn ${!isHuman ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
                     <span className="relative z-10">Send Message</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    <div className="font-Libertinus Sansabsolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                   </button>
                   {formStatus && (
                     <div className="mt-4 text-green-400 font-semibold text-center">{formStatus}</div>
